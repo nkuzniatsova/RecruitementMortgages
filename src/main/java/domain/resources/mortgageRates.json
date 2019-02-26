@@ -1,0 +1,32 @@
+[
+{
+	"maturityPeriod": 5,
+	"interestRate": 3.5,
+	"LocalDateTime": "05.02.2019 09:00"
+}
+{
+	"maturityPeriod": 10,
+	"interestRate": 3.1,
+	"LocalDateTime": "10.02.2019 09:00"
+}
+{
+	"maturityPeriod": 15,
+	"interestRate": 2.15,
+	"LocalDateTime": "15.02.2019 09:00"
+}
+{
+	"maturityPeriod": 20,
+	"interestRate": 2.00,
+	"LocalDateTime": "20.02.2019 09:00"
+}
+{
+	"maturityPeriod": 25,
+	"interestRate": 1.85,
+	"LocalDateTime": "25.01.2019 09:00"
+}
+{
+	"maturityPeriod": 30,
+	"interestRate": 1.5,
+	"LocalDateTime": "30.01.2019 09:00"
+}
+]
