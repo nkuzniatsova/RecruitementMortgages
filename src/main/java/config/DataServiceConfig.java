@@ -18,11 +18,13 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 /**
- * @author User
+ * @author Natallia 
+ * Java configuration class for the data access and transactions.
  *
  */
 @Configuration
@@ -67,9 +69,15 @@ public class DataServiceConfig {
 	
 	@Bean
 	public EntityManagerFactory entityManagerFactory() {
-		return null;
-		
-	}
+		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+		factoryBean.setPackagesToScan("entities");
+		factoryBean.setDataSource(dataSource());
+		factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+		factoryBean.setJpaProperties(hibernateProperties());
+		factoryBean.setJpaVendorAdapter(jpaVendorAdapter());
+		factoryBean.afterPropertiesSet();		
+		return factoryBean.getNativeEntityManagerFactory(); 		
+	}	
 	
 	
 }
