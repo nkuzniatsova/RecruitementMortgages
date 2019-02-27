@@ -46,6 +46,7 @@ public class RmiTests {
 	}
 
 	private void listMortgageRates(List<MortgageRate> mortgageRates) {
-		mortgageRates.forEach(s-> logger.info(s.toString()));	
+		mortgageRates.forEach(s-> logger.info(s.toString())); 
 	}
+	//dummy text to push code
 }
